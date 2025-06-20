@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main   # Set this to your default branch if different
+      - main
   pull_request:
 
 jobs:
@@ -17,23 +17,29 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  # Or the Ruby version you require
+          ruby-version: '3.1' # Or your preferred version
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Clean up old dependencies
         run: |
-          gem install bundler
-          bundle install
+          rm -f Gemfile.lock
+          rm -rf vendor/
+
+      - name: Update Bundler
+        run: gem install bundler:2.5.12
+
+      - name: Install dependencies
+        run: bundle install
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      # Optional: Deploy to GitHub Pages
-      # - name: Deploy
+      # Uncomment this section to deploy to GitHub Pages using the peaceiris/actions-gh-pages action.
+      # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v4
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
