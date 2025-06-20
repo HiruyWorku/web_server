@@ -8,10 +8,10 @@ print(__name__)
 def my_home():
     return render_template('index.html')
 
-@app.route("/about.html")
-def about():
-    return render_template('about.html')
+@app.route('/<string:page_name>')
+def html_page(page_name):
+    return render_template(page_name)
 
-@app.route('/blog/2020/dogs')
-def blog2():
-    return 'this is my dog'
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    return 'form submmited yay'
