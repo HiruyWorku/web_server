@@ -36,7 +36,7 @@ jobs:
         run: bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --source .
 
       # Uncomment this section to deploy to GitHub Pages using the peaceiris/actions-gh-pages action.
       # - name: Deploy to GitHub Pages
