@@ -4,17 +4,45 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     type();
     movingBackgroundImage();
+    
+    // Image switcher for about page with fade effect
+    const images = [
+        '/static/assets/me_images/original.jpg',
+        '/static/assets/me_images/ghibli.jpg',
+        '/static/assets/me_images/simpsons.jpg',
+        '/static/assets/me_images/pixar.jpg',
+        '/static/assets/me_images/idk.jpg'
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('about-switcher');
+
+    if (imgElement) {
+        setInterval(() => {
+            // Fade out
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                // Switch image after fade out
+                currentIndex = (currentIndex + 1) % images.length;
+                imgElement.src = images[currentIndex];
+                // Fade in
+                imgElement.style.opacity = 1;
+            }, 500); // Match the CSS transition duration (0.5s = 500ms)
+        }, 4000); // Or your preferred interval
+    }
 });
 
 // Typed.js function
 function type() {
-    new Typed("#typed", {
-        stringsElement: "#typed-strings",
-        typeSpeed: 100,
-        backSpeed: 20,
-        loop: true,
-        loopCount: Infinity
-    });
+    if (document.getElementById('typed')) {
+        new Typed("#typed", {
+            stringsElement: "#typed-strings",
+            typeSpeed: 100,
+            backSpeed: 20,
+            loop: true,
+            loopCount: Infinity
+        });
+    }
 }
 
 // Moving background image function
@@ -356,4 +384,4 @@ $(document).ready(function() {
     trackEvent('engagement', 'page_view', window.location.pathname);
     
     console.log('Portfolio website initialized successfully');
-}); 
+});

@@ -1314,4 +1314,17 @@ textarea {
 .list-icons li {
     float: left;
     margin-right: 5px;
+}
+
+#about-switcher {
+    transition: opacity 0.5s;
+    opacity: 1;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    background: #222;
 } 
