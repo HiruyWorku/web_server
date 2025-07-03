@@ -898,6 +898,9 @@ body.minimal {
         margin-bottom: 40px;
     }
 }
+.section-container-spacer-small {
+    margin-bottom: 10px;
+}
 
 .section-container {
     padding: 60px 0;

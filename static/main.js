@@ -63,8 +63,19 @@ $(document).ready(function() {
 // Note: This is a simplified version. The full file would contain all Bootstrap components
 
 // Carousel functionality
-$('.carousel').carousel({
-    interval: 5000
+$(document).ready(function() {
+    $('.carousel').carousel({
+        interval: 5000,
+        pause: "hover"
+    });
+    
+    // Ensure carousel controls work properly
+    $('.carousel-control').on('click', function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        var direction = $(this).hasClass('left') ? 'prev' : 'next';
+        $(target).carousel(direction);
+    });
 });
 
 // Smooth scrolling for navigation links
