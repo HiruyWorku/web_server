@@ -1319,6 +1319,41 @@ textarea {
     margin-right: 5px;
 }
 
+/* PDF Button Styling */
+.btn-pdf {
+    background-color: black;
+    border-color: black;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-pdf:hover {
+    background-color: #878787;
+    border-color: #878787;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px black;
+}
+
+.btn-pdf i {
+    margin-right: 8px;
+}
+
+/* Research Paper Card Styling */
+.research-paper-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.research-paper-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
 #about-switcher {
     transition: opacity 0.5s;
     opacity: 1;
