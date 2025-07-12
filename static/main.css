@@ -1554,3 +1554,110 @@ textarea {
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     background: #222;
 } 
+
+/* Certification Carousel Styling */
+.certification-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px 10px;
+  margin: 0 auto 15px;
+  max-width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.certification-link {
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.certification-link:hover {
+  text-decoration: none;
+}
+
+.certification-link:hover .certification-img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+.certification-img {
+  max-width: 240px;
+  max-height: 240px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#certificationsCarousel .carousel-control.left,
+#certificationsCarousel .carousel-control.right {
+  background-image: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -25px;
+  opacity: 0.8;
+}
+
+#certificationsCarousel .carousel-control.left {
+  left: -25px;
+}
+
+#certificationsCarousel .carousel-control.right {
+  right: -25px;
+}
+
+#certificationsCarousel .carousel-control:hover {
+  opacity: 1;
+  background-color: #000;
+}
+
+#certificationsCarousel .carousel-indicators li {
+  background: #000;
+}
+
+#certificationsCarousel .carousel-indicators .active {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .certification-card {
+    padding: 15px 10px;
+    margin-bottom: 10px;
+  }
+  .certification-img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certification-card {
+    padding: 12px 8px;
+  }
+  .certification-img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  .certification-card h4 {
+    font-size: 14px;
+  }
+  .certification-card p {
+    font-size: 12px;
+  }
+} 
