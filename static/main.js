@@ -93,29 +93,29 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 });
 
 // Form submission handling
-$('form').on('submit', function(e) {
-    e.preventDefault();
-    
-    var formData = {
-        email: $('#email').val(),
-        subject: $('#subject').val(),
-        message: $('#message').val()
-    };
-    
-    $.ajax({
-        type: 'POST',
-        url: '/submit_form',
-        data: formData,
-        success: function(response) {
-            // Handle successful form submission
-            console.log('Form submitted successfully');
-        },
-        error: function(xhr, status, error) {
-            // Handle form submission error
-            console.error('Form submission failed:', error);
-        }
-    });
-});
+// $('form').on('submit', function(e) {
+//     e.preventDefault();
+//     
+//     var formData = {
+//         email: $('#email').val(),
+//         subject: $('#subject').val(),
+//         message: $('#message').val()
+//     };
+//     
+//     $.ajax({
+//         type: 'POST',
+//         url: '/submit_form',
+//         data: formData,
+//         success: function(response) {
+//             // Handle successful form submission
+//             console.log('Form submitted successfully');
+//         },
+//         error: function(xhr, status, error) {
+//             // Handle form submission error
+//             console.error('Form submission failed:', error);
+//         }
+//     });
+// });
 
 // Mobile navigation toggle
 $('.navbar-toggle').on('click', function() {
